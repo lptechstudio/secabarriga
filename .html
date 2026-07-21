@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Barriga Consciente — Método de Respiração e Postura para Diástase + Bebida Funcional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blush:#FBF1EE;
+    --blush-2:#F4E4DF;
+    --wine:#6E2A3A;
+    --wine-dark:#571F2C;
+    --rose:#D9808E;
+    --rose-soft:#F6DEE2;
+    --sage:#6B8F71;
+    --sage-soft:#E7F0E5;
+    --gold:#C9A227;
+    --ink:#3A2426;
+    --muted:#7A5F60;
+    --muted-2:#A38788;
+    --border:#EEDEDA;
+    --radius-lg:30px;
+    --radius-md:20px;
+    --radius-sm:12px;
+    --shadow-soft:0 24px 60px -20px rgba(110,42,58,0.22);
+    --shadow-card:0 10px 30px -12px rgba(110,42,58,0.14);
+    --ease:cubic-bezier(.22,1,.36,1);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--blush);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;margin:0;letter-spacing:-0.02em;}
+  p{margin:0;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  .script{font-family:'Caveat',cursive;font-weight:700;color:var(--rose);}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--wine);margin-bottom:16px;}
+  .eyebrow::before{content:"";width:16px;height:1.5px;background:var(--rose);display:inline-block;}
+
+  .scribble{position:relative;display:inline-block;}
+  .scribble svg{position:absolute;left:-6%;top:-18%;width:112%;height:140%;pointer-events:none;z-index:-1;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(251,241,238,0.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:all .3s var(--ease);}
+  nav.scrolled{border-bottom:1px solid var(--border);box-shadow:0 4px 24px -12px rgba(110,42,58,0.1);}
+  .logo{font-family:'Poppins';font-weight:700;font-size:19px;color:var(--wine);display:flex;align-items:center;gap:9px;}
+  .logo-mark{width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 35% 35%, var(--rose), var(--wine));flex-shrink:0;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;}
+  .nav-links a:hover{color:var(--wine);}
+  .nav-cta{background:var(--wine);color:#fff;padding:11px 22px;border-radius:100px;font-size:13.5px;font-weight:600;transition:all .25s var(--ease);}
+  .nav-cta:hover{background:var(--rose);transform:translateY(-1px);}
+
+  .hero{position:relative;padding:150px 0 90px;overflow:hidden;}
+  .hero::before{content:"";position:absolute;top:-10%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle, var(--rose-soft) 0%, transparent 70%);z-index:0;}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:0.95fr 1.05fr;gap:56px;align-items:center;}
+  .persona-frame{position:relative;}
+  .persona-blob{aspect-ratio:4/4.6;border-radius:44% 56% 62% 38% / 48% 42% 58% 52%;background:linear-gradient(150deg, var(--rose-soft), var(--blush-2));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;box-shadow:var(--shadow-soft);}
+  .persona-placeholder{text-align:center;color:var(--wine);opacity:0.55;padding:30px;}
+  .persona-placeholder svg{width:76px;height:76px;margin-bottom:10px;}
+  .persona-placeholder p{font-size:12.5px;font-weight:600;line-height:1.5;}
+  .persona-badge{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);background:#fff;padding:12px 22px;border-radius:100px;box-shadow:var(--shadow-card);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+  .persona-badge .stars{color:var(--gold);font-size:13px;}
+  .persona-badge span{font-size:12.5px;font-weight:600;color:var(--wine);}
+  .hero-copy .eyebrow{color:var(--wine);}
+  .hero-copy h1{font-size:clamp(32px,4.2vw,52px);color:var(--wine-dark);font-weight:700;line-height:1.12;}
+  .hero-copy p.sub{margin-top:20px;font-size:17px;line-height:1.65;color:var(--muted);max-width:540px;}
+  .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .btn-primary{background:var(--wine);color:#fff;padding:16px 30px;border-radius:100px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .25s var(--ease);box-shadow:0 14px 30px -10px rgba(110,42,58,0.45);}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--wine-dark);}
+  .btn-secondary{background:#fff;color:var(--wine);padding:16px 28px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid var(--border);transition:all .25s;}
+  .btn-secondary:hover{border-color:var(--rose);}
+  .hero-stats{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap;}
+  .stat-num{font-family:'Poppins';font-size:26px;font-weight:700;color:var(--wine-dark);}
+  .stat-label{font-size:12.5px;color:var(--muted);margin-top:2px;}
+
+  section{padding:110px 0;}
+  .section-head{max-width:620px;margin-bottom:56px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(27px,3.2vw,40px);color:var(--wine-dark);font-weight:700;line-height:1.16;}
+  .section-head p{margin-top:14px;font-size:16px;color:var(--muted);line-height:1.6;}
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  .diagnosis{background:#fff;}
+  .diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .diag-card{background:var(--blush);border-radius:var(--radius-md);padding:26px;border:1.5px solid var(--border);cursor:pointer;transition:all .3s var(--ease);}
+  .diag-card:hover{border-color:var(--rose);transform:translateY(-3px);box-shadow:var(--shadow-card);}
+  .diag-card.active{border-color:var(--wine);background:#fff;box-shadow:var(--shadow-card);}
+  .diag-icon{width:44px;height:44px;border-radius:14px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .diag-card h4{font-size:16.5px;color:var(--wine-dark);margin-bottom:8px;}
+  .diag-card p{font-size:13.5px;color:var(--muted);line-height:1.5;}
+  .diag-detail{margin-top:26px;background:var(--blush);border-radius:var(--radius-lg);border:1.5px solid var(--border);max-height:0;overflow:hidden;opacity:0;transition:max-height .5s var(--ease), opacity .4s var(--ease), padding .5s var(--ease);}
+  .diag-detail.open{max-height:600px;opacity:1;padding:36px;}
+  .diag-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+  .diag-detail h3{font-size:21px;color:var(--wine-dark);margin-bottom:12px;}
+  .diag-detail p{font-size:14.5px;color:var(--muted);line-height:1.65;}
+  .diag-continue{margin-top:20px;background:var(--wine);color:#fff;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;}
+
+  .method{background:var(--wine);color:#fff;}
+  .method .section-head h2{color:#fff;}
+  .method .section-head p{color:rgba(255,255,255,0.65);}
+  .method .eyebrow{color:var(--rose-soft)!important;}
+  .method .eyebrow::before{background:var(--rose-soft);}
+  .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;position:relative;}
+  .timeline::before{content:"";position:absolute;top:24px;left:5%;right:5%;height:1.5px;background:linear-gradient(90deg, rgba(255,255,255,0.05), rgba(217,128,142,0.7), rgba(255,255,255,0.05));}
+  .tl-step{position:relative;text-align:center;}
+  .tl-dot{width:50px;height:50px;border-radius:50%;background:var(--wine-dark);border:1.5px solid rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-family:'Poppins';font-weight:700;font-size:14px;color:var(--rose-soft);position:relative;z-index:2;transition:all .3s;}
+  .tl-step:hover .tl-dot{background:var(--rose);border-color:var(--rose);color:#fff;transform:scale(1.08);}
+  .tl-step h4{font-size:14px;font-weight:600;margin-bottom:6px;}
+  .tl-step p{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.5;}
+
+  .drink-section{background:var(--sage-soft);}
+  .drink-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;align-items:center;}
+  .drink-visual{background:linear-gradient(160deg, var(--sage), #4F6E56);border-radius:var(--radius-lg);padding:44px 30px;text-align:center;color:#fff;box-shadow:var(--shadow-soft);}
+  .drink-bottle{width:90px;height:200px;margin:0 auto 18px;border-radius:14px 14px 26px 26px;background:linear-gradient(180deg, #EFD98A, #D9B84A);position:relative;border:2px solid rgba(255,255,255,0.3);}
+  .drink-bottle::before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%);width:26px;height:16px;background:#2E2E2E;border-radius:4px;}
+  .drink-visual h4{font-size:15px;font-weight:700;margin-bottom:4px;}
+  .drink-visual span{font-size:12px;opacity:0.8;}
+  .ingredient-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
+  .ingredient-chip{background:#fff;border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
+  .ingredient-chip h5{font-size:13.5px;color:var(--wine-dark);margin-bottom:3px;}
+  .ingredient-chip p{font-size:12px;color:var(--muted);line-height:1.4;}
+  .drink-note{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;background:#fff;border-radius:var(--radius-sm);padding:16px 18px;border:1.5px dashed var(--border);}
+  .drink-price-row{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap;}
+  .drink-price{font-family:'Poppins';font-size:24px;font-weight:700;color:var(--wine-dark);}
+  .drink-price span{font-size:13px;color:var(--muted-2);font-weight:500;}
+
+  .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .benefit-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);padding:24px;transition:all .35s var(--ease);}
+  .benefit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);border-color:transparent;}
+  .benefit-icon{width:40px;height:40px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:19px;}
+  .benefit-card h4{font-size:15px;color:var(--wine-dark);margin-bottom:6px;}
+  .benefit-card p{font-size:12.5px;color:var(--muted);line-height:1.5;}
+
+  .testi-section{background:#fff;overflow:hidden;}
+  .testi-track-wrap{position:relative;}
+  .testi-track{display:flex;gap:20px;transition:transform .6s var(--ease);}
+  .testi-card{min-width:330px;background:var(--blush);border-radius:var(--radius-md);padding:26px;border:1px solid var(--border);}
+  .testi-stars{color:var(--gold);font-size:14px;margin-bottom:12px;letter-spacing:2px;}
+  .testi-text{font-size:14px;line-height:1.6;color:var(--ink);margin-bottom:18px;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--wine));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;}
+  .testi-name{font-size:13px;font-weight:600;color:var(--wine-dark);}
+  .testi-city{font-size:11px;color:var(--muted-2);}
+  .testi-nav{display:flex;gap:9px;margin-top:30px;justify-content:center;}
+  .testi-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s;cursor:pointer;}
+  .testi-dot.active{background:var(--wine);width:22px;}
+  .disclaimer{font-size:11.5px;color:var(--muted-2);text-align:center;margin-top:26px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6;}
+
+  .pricing{background:var(--blush);}
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;}
+  .price-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:30px 24px;display:flex;flex-direction:column;transition:all .35s var(--ease);position:relative;}
+  .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
+  .price-card.featured{border-color:var(--wine);background:#FFFBFA;}
+  .price-card.platinum{border-color:var(--gold);background:linear-gradient(180deg,#FFFCF2,#fff);}
+  .best-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--wine);color:#fff;font-size:10.5px;font-weight:700;padding:6px 16px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;}
+  .plan-name{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px;}
+  .plan-price{font-family:'Poppins';font-size:29px;font-weight:700;color:var(--wine-dark);}
+  .plan-price span{font-size:13px;font-weight:500;color:var(--muted-2);}
+  .plan-desc{font-size:12.5px;color:var(--muted);margin:9px 0 20px;line-height:1.5;}
+  .plan-features{list-style:none;padding:0;margin:0 0 24px;flex:1;}
+  .plan-features li{font-size:13px;color:var(--ink);padding:8px 0;border-top:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;}
+  .plan-features li:first-child{border-top:none;}
+  .plan-features li svg{width:15px;height:15px;flex-shrink:0;margin-top:1px;color:var(--sage);}
+  .plan-cta{text-align:center;padding:13px;border-radius:100px;font-size:13.5px;font-weight:600;background:var(--blush);color:var(--wine-dark);transition:all .25s;}
+  .price-card.featured .plan-cta{background:var(--wine);color:#fff;}
+  .price-card.platinum .plan-cta{background:var(--gold);color:#fff;}
+  .plan-cta:hover{opacity:0.88;}
+
+  .guarantee-box{margin-top:52px;background:var(--sage-soft);border-radius:var(--radius-lg);padding:34px 42px;display:flex;align-items:center;gap:24px;}
+  .guarantee-icon{width:54px;height:54px;border-radius:50%;background:var(--sage);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .guarantee-box h4{font-size:16.5px;color:var(--wine-dark);margin-bottom:5px;}
+  .guarantee-box p{font-size:13.5px;color:var(--muted);line-height:1.55;}
+
+  .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15.5px;font-weight:600;color:var(--wine-dark);}
+  .faq-icon{font-size:19px;color:var(--rose);transition:transform .3s;}
+  .faq-item.open .faq-icon{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
+  .faq-a p{font-size:14px;color:var(--muted);line-height:1.6;padding-top:12px;max-width:620px;}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  .final-cta{background:linear-gradient(135deg,var(--wine),var(--wine-dark));border-radius:var(--radius-lg);padding:66px 46px;text-align:center;position:relative;overflow:hidden;}
+  .final-cta h2{color:#fff;font-size:clamp(25px,3vw,36px);max-width:600px;margin:0 auto 16px;}
+  .final-cta p{color:rgba(255,255,255,0.7);font-size:15px;max-width:460px;margin:0 auto 28px;}
+
+  footer{background:var(--blush-2);padding:56px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px;}
+  .footer-grid h5{font-size:12.5px;color:var(--wine-dark);margin-bottom:14px;}
+  .footer-grid a{display:block;font-size:13px;color:var(--muted);margin-bottom:9px;}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted-2);flex-wrap:wrap;gap:10px;}
+
+  @media(max-width:900px){
+    .nav-links{display:none;}
+    .hero-grid{grid-template-columns:1fr;}
+    .persona-frame{max-width:320px;margin:0 auto;}
+    .diag-grid{grid-template-columns:1fr;}
+    .diag-detail-inner{grid-template-columns:1fr;}
+    .timeline{grid-template-columns:repeat(3,1fr);row-gap:28px;}
+    .timeline::before{display:none;}
+    .drink-grid{grid-template-columns:1fr;}
+    .benefits-grid{grid-template-columns:repeat(2,1fr);}
+    .pricing-grid{grid-template-columns:repeat(2,1fr);}
+    .footer-grid{grid-template-columns:repeat(2,1fr);}
+    section{padding:76px 0;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo"><span class="logo-mark"></span>Barriga Consciente</div>
+  <div class="nav-links">
+    <a href="#metodo">Método</a>
+    <a href="#bebida">Bebida Funcional</a>
+    <a href="#planos">Planos</a>
+    <a href="#faq">Dúvidas</a>
+  </div>
+  <a href="#planos" class="nav-cta">Quero começar</a>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="persona-frame">
+      <div class="persona-blob">
+        <div class="persona-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+          <p>Foto da especialista<br>(inserir aqui)</p>
+        </div>
+      </div>
+      <div class="persona-badge"><span class="stars">★★★★★</span><span>+12.000 mulheres já praticam</span></div>
+    </div>
+    <div class="hero-copy">
+      <span class="eyebrow">Especialista em diástase e recuperação abdominal</span>
+      <h1>Sua barriga tem <span class="scribble">jeito<svg viewBox="0 0 200 40"><path d="M4 30 Q60 4 100 20 Q140 34 196 12" stroke="#D9808E" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span> — com respiração, postura e consistência.</h1>
+      <p class="sub">Um método passo a passo de respiração diafragmática, ativação do transverso e posturas para apoiar a recuperação da diástase e o afinamento da cintura. Sem cirurgia, sem academia. 10 minutos por dia, no seu quarto. Não substitui avaliação médica.</p>
+      <div class="hero-ctas">
+        <a href="#planos" class="btn-primary">
+          Começar meu tratamento
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#bebida" class="btn-secondary">Conhecer a bebida funcional</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-num" data-count="12400">0</div><div class="stat-label">Alunas acompanhadas</div></div>
+        <div><div class="stat-num" data-count="15">0</div><div class="stat-label">Países atendidos</div></div>
+        <div><div class="stat-num" data-count="4.9">0</div><div class="stat-label">Avaliação média</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="diagnosis" id="diagnostico">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Diagnóstico rápido</span>
+      <h2>Qual desses momentos é o seu agora?</h2>
+      <p>Escolha a opção que mais combina com você. Vou te mostrar por onde normalmente começamos.</p>
+    </div>
+    <div class="diag-grid reveal">
+      <div class="diag-card" data-profile="0">
+        <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6E2A3A" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14v2a4 4 0 0 0 8 0v-2"/></svg></div>
+        <h4>Sou mãe recente</h4>
+        <p>Minha barriga não voltou depois do parto, sinto o abdômen separado ou abaulado.</p>
+      </div>
+      <div class="diag-card" data-profile="1">
+        <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6E2A3A" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg></div>
+        <h4>Barriga estufada e postura ruim</h4>
+        <p>Sinto inchaço, dor lombar e nunca aprendi a respirar direito.</p>
+      </div>
+      <div class="diag-card" data-profile="2">
+        <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6E2A3A" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h4>Já treino, quero refinar</h4>
+        <p>Já malho, mas quero entender a técnica de ativação e acelerar resultados.</p>
+      </div>
+    </div>
+    <div class="diag-detail" id="diagDetail">
+      <div class="diag-detail-inner">
+        <div>
+          <h3 id="diagTitle"></h3>
+          <p id="diagText"></p>
+          <a href="#planos" class="diag-continue">Ver plano recomendado
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div style="background:var(--blush);border-radius:var(--radius-md);min-height:200px;display:flex;align-items:center;justify-content:center;">
+          <svg width="150" height="150" viewBox="0 0 160 160" fill="none">
+            <ellipse cx="80" cy="80" rx="58" ry="68" stroke="#D9808E" stroke-width="2" opacity="0.5"/>
+            <ellipse id="diagRing" cx="80" cy="80" rx="40" ry="50" stroke="#6E2A3A" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="method" id="metodo">
+  <div class="container">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Uma progressão em 6 passos, no seu ritmo</h2>
+      <p>Aulas curtas, liberadas conforme você avança — sem pular etapas importantes.</p>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-step"><div class="tl-dot">01</div><h4>Avaliação</h4><p>Diagnóstico da sua diástase.</p></div>
+      <div class="tl-step"><div class="tl-dot">02</div><h4>Respiração</h4><p>Base diafragmática guiada.</p></div>
+      <div class="tl-step"><div class="tl-dot">03</div><h4>Ativação</h4><p>Técnica de vácuo e transverso.</p></div>
+      <div class="tl-step"><div class="tl-dot">04</div><h4>Postura</h4><p>Posturas hipopressivas.</p></div>
+      <div class="tl-step"><div class="tl-dot">05</div><h4>Consistência</h4><p>10 min por dia, sem falhar.</p></div>
+      <div class="tl-step"><div class="tl-dot">06</div><h4>Progresso</h4><p>Medidas e fotos de evolução.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="drink-section" id="bebida">
+  <div class="container">
+    <div class="drink-grid">
+      <div class="drink-visual reveal">
+        <div class="drink-bottle"></div>
+        <h4>Protocolo Reset 5 Dias</h4>
+        <span>Bebida funcional complementar</span>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Complemento do método</span>
+        <h2 style="font-size:clamp(24px,2.8vw,32px);color:var(--wine-dark);margin-bottom:14px;">Uma bebida funcional para apoiar sua rotina, não para substituir o método</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:520px;">Criada para acompanhar as aulas de respiração e postura, com ingredientes tradicionalmente associados a digestão leve, disposição e bem-estar. É um apoio à sua rotina — os resultados de barriga e postura vêm do método de respiração e ativação, praticado com consistência.</p>
+        <div class="ingredient-grid">
+          <div class="ingredient-chip"><h5>Chá verde</h5><p>Associado ao metabolismo energético</p></div>
+          <div class="ingredient-chip"><h5>Chá preto</h5><p>Tradicionalmente ligado à digestão</p></div>
+          <div class="ingredient-chip"><h5>Gengibre e hibisco</h5><p>Sabor leve, efeito antioxidante</p></div>
+          <div class="ingredient-chip"><h5>Cardamomo e malva</h5><p>Conforto digestivo no dia a dia</p></div>
+        </div>
+        <div class="drink-price-row">
+          <div class="drink-price">R$57 <span>/ kit com 10 unidades</span></div>
+        </div>
+        <div class="drink-note">Bebida funcional, não é medicamento. Não substitui alimentação equilibrada, acompanhamento médico ou o método de respiração e postura. Contém cafeína — evite em caso de gravidez, amamentação, hipertensão ou condições de saúde específicas sem orientação profissional.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Benefícios</span>
+      <h2>O que você constrói ao longo do método</h2>
+    </div>
+    <div class="benefits-grid reveal">
+      <div class="benefit-card"><div class="benefit-icon">🫁</div><h4>Consciência do core</h4><p>Sinta e ative a musculatura profunda.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🌬️</div><h4>Respiração eficiente</h4><p>Padrão diafragmático em vez de respiração curta.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🧍‍♀️</div><h4>Postura</h4><p>Menos dor lombar e mais alinhamento.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🤍</div><h4>Autoestima</h4><p>Reconectar com o próprio corpo pós-parto.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">📱</div><h4>Pratique em qualquer lugar</h4><p>Aulas de 10 minutos, sem equipamento.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">🎓</div><h4>Orientação especializada</h4><p>Conteúdo estruturado por profissional da área.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">📈</div><h4>Progresso visível</h4><p>Medidas e marcos claros por módulo.</p></div>
+      <div class="benefit-card"><div class="benefit-icon">👭</div><h4>Comunidade</h4><p>Outras mulheres no mesmo caminho.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section" id="resultados">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Histórias reais</span>
+      <h2>Mulheres que já vivem o método</h2>
+    </div>
+    <div class="testi-track-wrap reveal">
+      <div class="testi-track" id="testiTrack">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Depois do parto eu não sabia nem como ativar a barriga de novo. O passo a passo de respiração fez toda a diferença."</p>
+          <div class="testi-person"><div class="testi-avatar">M</div><div><div class="testi-name">Mariana C.</div><div class="testi-city">Fortaleza, CE · 4 meses de método</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Nunca tinha entendido a técnica de vácuo de verdade. Os vídeos curtos couberam na rotina com o bebê."</p>
+          <div class="testi-person"><div class="testi-avatar">J</div><div><div class="testi-name">Juliana R.</div><div class="testi-city">Recife, PE · 2 meses de método</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"O que mais gostei foi a consistência: pouquinho todo dia, sem me sentir perdida sobre o que fazer."</p>
+          <div class="testi-person"><div class="testi-avatar">P</div><div><div class="testi-name">Patrícia A.</div><div class="testi-city">São Paulo, SP · 6 meses de método</div></div></div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Minha postura melhorou muito e as dores nas costas diminuíram ao longo dos módulos."</p>
+          <div class="testi-person"><div class="testi-avatar">C</div><div><div class="testi-name">Camila S.</div><div class="testi-city">Belo Horizonte, MG · 3 meses de método</div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-nav" id="testiNav"></div>
+    <p class="disclaimer">Depoimentos de alunas reais. Resultados individuais variam de acordo com histórico de saúde, consistência e orientação profissional. O método e a bebida funcional não substituem avaliação médica ou fisioterapêutica.</p>
+  </div>
+</section>
+
+<section class="pricing" id="planos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Planos</span>
+      <h2>Escolha como quer começar</h2>
+      <p>Todos os planos incluem acesso à plataforma, suporte e atualizações de conteúdo.</p>
+    </div>
+    <div class="pricing-grid reveal">
+      <div class="price-card">
+        <div class="plan-name">Starter</div>
+        <div class="plan-price">R$47<span>/mês</span></div>
+        <p class="plan-desc">Para entender a técnica antes de se comprometer.</p>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Módulo de Respiração</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Diagnóstico personalizado</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Comunidade de apoio</li>
+        </ul>
+        <a href="#checkout" class="plan-cta">Começar</a>
+      </div>
+      <div class="price-card featured">
+        <span class="best-tag">Mais escolhido</span>
+        <div class="plan-name">Recovery + Bebida</div>
+        <div class="plan-price">R$127<span>/mês</span></div>
+        <p class="plan-desc">Programa completo + kit de 10 bebidas todo mês.</p>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Módulos 1 a 4 completos</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Kit mensal da bebida funcional</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Certificado de conclusão</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Suporte prioritário</li>
+        </ul>
+        <a href="#checkout" class="plan-cta">Começar agora</a>
+      </div>
+      <div class="price-card">
+        <div class="plan-name">Evolution</div>
+        <div class="plan-price">R$147<span>/mês</span></div>
+        <p class="plan-desc">Para quem já treina e quer refinar técnica.</p>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Tudo do Recovery</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Módulos avançados</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Desafios mensais</li>
+        </ul>
+        <a href="#checkout" class="plan-cta">Começar</a>
+      </div>
+      <div class="price-card platinum">
+        <div class="plan-name">Platinum + Bebida Turbo</div>
+        <div class="plan-price">R$247<span>/mês</span></div>
+        <p class="plan-desc">Acompanhamento individual + kit Reset Turbo mensal.</p>
+        <ul class="plan-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Tudo do Evolution</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Revisão individual mensal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Kit Reset Turbo incluso</li>
+        </ul>
+        <a href="#checkout" class="plan-cta">Falar com a equipe</a>
+      </div>
+    </div>
+    <div class="guarantee-box reveal">
+      <div class="guarantee-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+      <div>
+        <h4>Garantia incondicional de 7 dias</h4>
+        <p>Experimente o Módulo 1 completo. Se não fizer sentido pra você, devolvemos 100% do valor, sem perguntas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:#fff;">
+  <div class="container" style="max-width:800px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">Perguntas frequentes</span>
+      <h2>Ainda com dúvidas?</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item open">
+        <div class="faq-q">Preciso de experiência prévia com exercícios?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Não. O método começa pela respiração e evolui em progressão, respeitando seu ponto de partida.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">A bebida funcional é obrigatória?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Não. Ela é um complemento opcional à rotina — o resultado no core vem do método de respiração e postura, praticado com consistência.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">O método e a bebida substituem acompanhamento médico?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Não. São conteúdo educacional e um produto de apoio; não substituem avaliação ou tratamento médico ou fisioterapêutico, principalmente em casos de diástase severa.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Quais formas de pagamento são aceitas?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Pix, cartão de crédito com parcelamento, e cupons de desconto quando disponíveis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>Sua respiração é o primeiro passo para reconectar com sua barriga.</h2>
+      <p>Comece hoje com o Módulo 1 e sinta a diferença nas primeiras aulas.</p>
+      <a href="#planos" class="btn-primary">Escolher meu plano</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom:12px;"><span class="logo-mark"></span>Barriga Consciente</div>
+        <p style="font-size:13px;color:var(--muted);max-width:280px;line-height:1.6;">Educação em respiração, postura e recuperação abdominal. Conteúdo de apoio — não substitui avaliação médica.</p>
+      </div>
+      <div>
+        <h5>Plataforma</h5>
+        <a href="#metodo">Método</a>
+        <a href="#bebida">Bebida funcional</a>
+        <a href="#planos">Planos</a>
+      </div>
+      <div>
+        <h5>Suporte</h5>
+        <a href="#faq">Dúvidas</a>
+        <a href="#">Fale conosco</a>
+        <a href="#">Central de ajuda</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade (LGPD)</a>
+        <a href="#">Aviso médico</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Barriga Consciente. Todos os direitos reservados.</span>
+      <span>Resultados individuais variam. Consulte um profissional de saúde.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+
+  const statEls = document.querySelectorAll('.stat-num');
+  const statIO = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const el = e.target;
+        const target = parseFloat(el.dataset.count);
+        const isDecimal = target % 1 !== 0;
+        let cur = 0; const step = target / 40;
+        const t = setInterval(()=>{
+          cur += step;
+          if(cur >= target){ cur = target; clearInterval(t); }
+          el.textContent = isDecimal ? cur.toFixed(1) : Math.round(cur).toLocaleString('pt-BR');
+        }, 30);
+        statIO.unobserve(el);
+      }
+    });
+  }, {threshold:0.5});
+  statEls.forEach(el => statIO.observe(el));
+
+  const profiles = [
+    {title:"Foco: Respiração e reconexão pós-parto", text:"Nesse perfil, começamos pelo Módulo de Respiração Diafragmática, com ativação leve do core antes de qualquer exercício de carga.", ring:50},
+    {title:"Foco: Base respiratória e postura", text:"Aqui o ponto de partida é reeducar o padrão respiratório, aliviando tensão lombar antes de avançar para o vácuo abdominal.", ring:45},
+    {title:"Foco: Refinamento técnico", text:"Você já tem base — o método foca em aprimorar a técnica de vácuo, tempo de contração e integração com seu treino atual.", ring:36}
+  ];
+  const diagCards = document.querySelectorAll('.diag-card');
+  const diagDetail = document.getElementById('diagDetail');
+  const diagTitle = document.getElementById('diagTitle');
+  const diagText = document.getElementById('diagText');
+  const diagRing = document.getElementById('diagRing');
+  diagCards.forEach(card=>{
+    card.addEventListener('click', ()=>{
+      diagCards.forEach(c=>c.classList.remove('active'));
+      card.classList.add('active');
+      const p = profiles[card.dataset.profile];
+      diagTitle.textContent = p.title;
+      diagText.textContent = p.text;
+      diagRing.setAttribute('rx', p.ring);
+      diagRing.setAttribute('ry', p.ring + 10);
+      diagDetail.classList.add('open');
+    });
+  });
+
+  const track = document.getElementById('testiTrack');
+  const cards = track.children;
+  const navWrap = document.getElementById('testiNav');
+  let idx = 0;
+  const visible = window.innerWidth > 900 ? 3 : 1;
+  const maxIdx = Math.max(0, cards.length - visible);
+  for(let i=0;i<=maxIdx;i++){
+    const dot = document.createElement('div');
+    dot.className = 'testi-dot' + (i===0?' active':'');
+    dot.addEventListener('click', ()=> goTo(i));
+    navWrap.appendChild(dot);
+  }
+  function goTo(i){
+    idx = i;
+    const cardWidth = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(-${idx*cardWidth}px)`;
+    [...navWrap.children].forEach((d,j)=>d.classList.toggle('active', j===idx));
+  }
+  setInterval(()=>{ idx = (idx+1) > maxIdx ? 0 : idx+1; goTo(idx); }, 5000);
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    item.querySelector('.faq-q').addEventListener('click', ()=>{
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+      if(!wasOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
