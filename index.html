@@ -8,24 +8,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --blush:#F1EFEA;
-    --blush-2:#E7E2D7;
-    --wine:#1E4A47;
-    --wine-dark:#123330;
-    --rose:#C98A2E;
-    --rose-soft:#F3E4C6;
-    --sage:#5F8567;
-    --sage-soft:#E5EEE3;
-    --gold:#8C6B2F;
-    --ink:#23262A;
-    --muted:#5E625F;
-    --muted-2:#8B8F8B;
-    --border:#DEDAD0;
+    --blush:#121412;
+    --blush-2:#1B1E1B;
+    --wine:#22C08D;
+    --wine-dark:#189367;
+    --rose:#E3A94A;
+    --rose-soft:#F2C878;
+    --sage:#6FD08A;
+    --sage-soft:#17231B;
+    --gold:#D6A756;
+    --ink:#EDEAE3;
+    --heading:#F7F5F0;
+    --muted:#A6A29A;
+    --muted-2:#726E67;
+    --border:#2A2D28;
+    --surface:#1C201D;
+    --surface-2:#242823;
     --radius-lg:30px;
     --radius-md:20px;
     --radius-sm:12px;
-    --shadow-soft:0 24px 60px -20px rgba(18,51,48,0.22);
-    --shadow-card:0 10px 30px -12px rgba(18,51,48,0.14);
+    --shadow-soft:0 24px 60px -20px rgba(0,0,0,0.55);
+    --shadow-card:0 10px 30px -12px rgba(0,0,0,0.45);
     --ease:cubic-bezier(.22,1,.36,1);
   }
   *{box-sizing:border-box;}
@@ -50,9 +53,9 @@
 
   .announce-bar{position:fixed;top:0;left:0;right:0;z-index:101;background:var(--wine-dark);color:#fff;text-align:center;padding:9px 16px;font-size:12.5px;font-weight:600;letter-spacing:0.01em;}
   .announce-bar strong{color:var(--rose-soft);}
-  nav{position:fixed;top:34px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(241,239,234,0.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:all .3s var(--ease);}
+  nav{position:fixed;top:34px;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:16px 32px;background:rgba(15,17,15,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:all .3s var(--ease);}
   nav.scrolled{border-bottom:1px solid var(--border);box-shadow:0 4px 24px -12px rgba(18,51,48,0.1);}
-  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#fff;border-top:1.5px solid var(--border);padding:12px 20px;display:none;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -8px 24px -12px rgba(18,51,48,0.18);}
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:99;background:var(--surface);border-top:1.5px solid var(--border);padding:12px 20px;display:none;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 -8px 24px -12px rgba(18,51,48,0.18);}
   .sticky-cta span{font-size:12.5px;color:var(--muted);font-weight:600;}
   .sticky-cta a{background:var(--wine);color:#fff;padding:12px 22px;border-radius:100px;font-size:13.5px;font-weight:600;white-space:nowrap;flex-shrink:0;}
   @media(max-width:900px){
@@ -78,48 +81,48 @@
   .persona-video{width:100%;height:100%;object-fit:cover;object-position:center 22%;background:#000;}
   .persona-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:68px;border-radius:50%;background:rgba(255,255,255,0.92);color:var(--wine);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-soft);transition:all .25s var(--ease);z-index:3;}
   .persona-play svg{margin-left:3px;}
-  .persona-play:hover{background:#fff;transform:translate(-50%,-50%) scale(1.06);}
+  .persona-play:hover{background:var(--surface);transform:translate(-50%,-50%) scale(1.06);}
   .persona-play.hidden{opacity:0;pointer-events:none;transform:translate(-50%,-50%) scale(0.8);}
   .credential-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
-  .credential-pill{background:#fff;border:1.5px solid var(--border);padding:8px 16px;border-radius:100px;font-size:12.5px;font-weight:600;color:var(--wine-dark);display:inline-flex;align-items:center;gap:6px;}
+  .credential-pill{background:var(--surface);border:1.5px solid var(--border);padding:8px 16px;border-radius:100px;font-size:12.5px;font-weight:600;color:var(--heading);display:inline-flex;align-items:center;gap:6px;}
   .credential-pill svg{width:13px;height:13px;color:var(--sage);flex-shrink:0;}
   .hero-copy .eyebrow{color:var(--wine);}
-  .hero-copy h1{font-size:clamp(32px,4.2vw,52px);color:var(--wine-dark);font-weight:700;line-height:1.12;}
+  .hero-copy h1{font-size:clamp(32px,4.2vw,52px);color:var(--heading);font-weight:700;line-height:1.12;}
   .hero-copy p.sub{margin-top:20px;font-size:17px;line-height:1.65;color:var(--muted);max-width:540px;}
   .hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
   .btn-primary{background:var(--wine);color:#fff;padding:16px 30px;border-radius:100px;font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:10px;transition:all .25s var(--ease);box-shadow:0 14px 30px -10px rgba(110,42,58,0.45);}
   .btn-primary:hover{transform:translateY(-2px);background:var(--wine-dark);}
-  .btn-secondary{background:#fff;color:var(--wine);padding:16px 28px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid var(--border);transition:all .25s;}
+  .btn-secondary{background:var(--surface);color:var(--wine);padding:16px 28px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid var(--border);transition:all .25s;}
   .btn-secondary:hover{border-color:var(--rose);}
 
   section{padding:110px 0;}
   .section-head{max-width:620px;margin-bottom:56px;}
   .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
-  .section-head h2{font-size:clamp(27px,3.2vw,40px);color:var(--wine-dark);font-weight:700;line-height:1.16;}
+  .section-head h2{font-size:clamp(27px,3.2vw,40px);color:var(--heading);font-weight:700;line-height:1.16;}
   .section-head p{margin-top:14px;font-size:16px;color:var(--muted);line-height:1.6;}
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease), transform .8s var(--ease);}
   .reveal.in{opacity:1;transform:translateY(0);}
 
-  .diagnosis{background:#fff;}
+  .diagnosis{background:var(--surface);}
   .diag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
   .diag-card{background:var(--blush);border-radius:var(--radius-md);padding:26px;border:1.5px solid var(--border);cursor:pointer;transition:all .3s var(--ease);position:relative;}
   .diag-card:hover{border-color:var(--rose);transform:translateY(-3px);box-shadow:var(--shadow-card);}
-  .diag-card.active{border-color:var(--wine);background:#fff;box-shadow:var(--shadow-card);}
+  .diag-card.active{border-color:var(--wine);background:var(--surface);box-shadow:var(--shadow-card);}
   .diag-icon{width:44px;height:44px;border-radius:14px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:background .35s var(--ease), transform .35s var(--ease);}
   .diag-icon svg{transition:stroke .35s var(--ease);}
   .diag-card.active .diag-icon{background:var(--wine);transform:scale(1.08) rotate(-4deg);}
   .diag-card.active .diag-icon svg{stroke:#fff;}
   .diag-check{position:absolute;top:16px;right:16px;width:24px;height:24px;border-radius:50%;background:var(--wine);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.4);transition:all .35s var(--ease);}
   .diag-card.active .diag-check{opacity:1;transform:scale(1);}
-  .diag-card h4{font-size:16.5px;color:var(--wine-dark);margin-bottom:8px;}
+  .diag-card h4{font-size:16.5px;color:var(--heading);margin-bottom:8px;}
   .diag-card p{font-size:13.5px;color:var(--muted);line-height:1.5;}
   .diag-detail{margin-top:26px;background:var(--blush);border-radius:var(--radius-lg);border:1.5px solid var(--border);max-height:0;overflow:hidden;opacity:0;transition:max-height .5s var(--ease), opacity .4s var(--ease), padding .5s var(--ease);}
   .diag-detail.open{max-height:600px;opacity:1;padding:36px;}
   .diag-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;transition:opacity .18s var(--ease);}
   .diag-detail-inner.fading{opacity:0;}
-  .diag-detail h3{font-size:21px;color:var(--wine-dark);margin-bottom:12px;}
+  .diag-detail h3{font-size:21px;color:var(--heading);margin-bottom:12px;}
   .diag-detail p{font-size:14.5px;color:var(--muted);line-height:1.65;}
-  .diag-photo-frame{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1;background:#fff;box-shadow:var(--shadow-card);}
+  .diag-photo-frame{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1;background:var(--surface);box-shadow:var(--shadow-card);}
   .diag-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s var(--ease);}
   .diag-photo.show{opacity:1;}
   .diag-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--wine);opacity:0.5;text-align:center;padding:20px;transition:opacity .3s;}
@@ -148,22 +151,22 @@
   .drink-visual h4{font-size:15px;font-weight:700;margin-bottom:4px;}
   .drink-visual span{font-size:12px;opacity:0.8;}
   .ingredient-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
-  .ingredient-chip{background:#fff;border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
-  .ingredient-chip h5{font-size:13.5px;color:var(--wine-dark);margin-bottom:3px;}
+  .ingredient-chip{background:var(--surface);border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
+  .ingredient-chip h5{font-size:13.5px;color:var(--heading);margin-bottom:3px;}
   .ingredient-chip p{font-size:12px;color:var(--muted);line-height:1.4;}
-  .drink-note{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;background:#fff;border-radius:var(--radius-sm);padding:16px 18px;border:1.5px dashed var(--border);}
+  .drink-note{margin-top:22px;font-size:12.5px;color:var(--muted);line-height:1.6;background:var(--surface);border-radius:var(--radius-sm);padding:16px 18px;border:1.5px dashed var(--border);}
   .drink-price-row{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap;}
-  .drink-price{font-family:'Poppins';font-size:24px;font-weight:700;color:var(--wine-dark);}
+  .drink-price{font-family:'Poppins';font-size:24px;font-weight:700;color:var(--heading);}
   .drink-price span{font-size:13px;color:var(--muted-2);font-weight:500;}
 
   .benefits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-  .benefit-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-md);padding:24px;transition:all .35s var(--ease);}
+  .benefit-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-md);padding:24px;transition:all .35s var(--ease);}
   .benefit-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);border-color:transparent;}
   .benefit-icon{width:40px;height:40px;border-radius:12px;background:var(--rose-soft);display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:19px;}
-  .benefit-card h4{font-size:15px;color:var(--wine-dark);margin-bottom:6px;}
+  .benefit-card h4{font-size:15px;color:var(--heading);margin-bottom:6px;}
   .benefit-card p{font-size:12.5px;color:var(--muted);line-height:1.5;}
 
-  .testi-section{background:#fff;overflow:hidden;}
+  .testi-section{background:var(--surface);overflow:hidden;}
   .testi-track-wrap{position:relative;}
   .testi-track{display:flex;gap:20px;transition:transform .6s var(--ease);}
   .testi-card{min-width:330px;background:var(--blush);border-radius:var(--radius-md);padding:26px;border:1px solid var(--border);}
@@ -171,7 +174,7 @@
   .testi-text{font-size:14px;line-height:1.6;color:var(--ink);margin-bottom:18px;}
   .testi-person{display:flex;align-items:center;gap:12px;}
   .testi-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--wine));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;}
-  .testi-name{font-size:13px;font-weight:600;color:var(--wine-dark);}
+  .testi-name{font-size:13px;font-weight:600;color:var(--heading);}
   .testi-city{font-size:11px;color:var(--muted-2);}
   .testi-nav{display:flex;gap:9px;margin-top:30px;justify-content:center;}
   .testi-dot{width:8px;height:8px;border-radius:50%;background:var(--border);transition:all .3s;cursor:pointer;}
@@ -180,31 +183,31 @@
 
   .pricing{background:var(--blush);}
   .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch;}
-  .price-card{background:#fff;border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:30px 24px;display:flex;flex-direction:column;transition:all .35s var(--ease);position:relative;}
+  .price-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:30px 24px;display:flex;flex-direction:column;transition:all .35s var(--ease);position:relative;}
   .price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-soft);}
-  .price-card.featured{border-color:var(--wine);background:#FFFBFA;}
-  .price-card.platinum{border-color:var(--gold);background:linear-gradient(180deg,#FFFCF2,#fff);}
+  .price-card.featured{border-color:var(--wine);background:var(--surface-2);}
+  .price-card.platinum{border-color:var(--gold);background:linear-gradient(180deg,var(--surface-2),var(--surface));}
   .best-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--wine);color:#fff;font-size:10.5px;font-weight:700;padding:6px 16px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;}
   .plan-name{font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px;}
-  .plan-price{font-family:'Poppins';font-size:29px;font-weight:700;color:var(--wine-dark);}
+  .plan-price{font-family:'Poppins';font-size:29px;font-weight:700;color:var(--heading);}
   .plan-price span{font-size:13px;font-weight:500;color:var(--muted-2);}
   .plan-desc{font-size:12.5px;color:var(--muted);margin:9px 0 20px;line-height:1.5;}
   .plan-features{list-style:none;padding:0;margin:0 0 24px;flex:1;}
   .plan-features li{font-size:13px;color:var(--ink);padding:8px 0;border-top:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;}
   .plan-features li:first-child{border-top:none;}
   .plan-features li svg{width:15px;height:15px;flex-shrink:0;margin-top:1px;color:var(--sage);}
-  .plan-cta{text-align:center;padding:13px;border-radius:100px;font-size:13.5px;font-weight:600;background:var(--blush);color:var(--wine-dark);transition:all .25s;}
+  .plan-cta{text-align:center;padding:13px;border-radius:100px;font-size:13.5px;font-weight:600;background:var(--blush);color:var(--heading);transition:all .25s;}
   .price-card.featured .plan-cta{background:var(--wine);color:#fff;}
   .price-card.platinum .plan-cta{background:var(--gold);color:#fff;}
   .plan-cta:hover{opacity:0.88;}
 
   .guarantee-box{margin-top:52px;background:var(--sage-soft);border-radius:var(--radius-lg);padding:34px 42px;display:flex;align-items:center;gap:24px;}
   .guarantee-icon{width:54px;height:54px;border-radius:50%;background:var(--sage);flex-shrink:0;display:flex;align-items:center;justify-content:center;}
-  .guarantee-box h4{font-size:16.5px;color:var(--wine-dark);margin-bottom:5px;}
+  .guarantee-box h4{font-size:16.5px;color:var(--heading);margin-bottom:5px;}
   .guarantee-box p{font-size:13.5px;color:var(--muted);line-height:1.55;}
 
   .faq-item{border-bottom:1px solid var(--border);padding:20px 0;}
-  .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15.5px;font-weight:600;color:var(--wine-dark);}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:15.5px;font-weight:600;color:var(--heading);}
   .faq-icon{font-size:19px;color:var(--rose);transition:transform .3s;}
   .faq-item.open .faq-icon{transform:rotate(45deg);}
   .faq-a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease);}
@@ -217,33 +220,33 @@
 
   footer{background:var(--blush-2);padding:56px 0 28px;}
   .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px;}
-  .footer-grid h5{font-size:12.5px;color:var(--wine-dark);margin-bottom:14px;}
+  .footer-grid h5{font-size:12.5px;color:var(--heading);margin-bottom:14px;}
   .footer-grid a{display:block;font-size:13px;color:var(--muted);margin-bottom:9px;}
   .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted-2);flex-wrap:wrap;gap:10px;}
 
-  .products-section{background:#fff;}
+  .products-section{background:var(--surface);}
   .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
   .product-card{background:var(--blush);border:1.5px solid var(--border);border-radius:var(--radius-lg);padding:32px 26px;transition:all .3s var(--ease);display:flex;flex-direction:column;}
   .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card);border-color:var(--rose);}
   .product-icon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
-  .product-card h3{font-size:19px;color:var(--wine-dark);margin-bottom:8px;}
+  .product-card h3{font-size:19px;color:var(--heading);margin-bottom:8px;}
   .product-card p{font-size:13.5px;color:var(--muted);line-height:1.55;margin-bottom:18px;flex:1;}
-  .product-price-tag{font-family:'Poppins';font-size:20px;font-weight:700;color:var(--wine-dark);margin-bottom:14px;}
+  .product-price-tag{font-family:'Poppins';font-size:20px;font-weight:700;color:var(--heading);margin-bottom:14px;}
   .product-price-tag span{font-size:12px;color:var(--muted-2);font-weight:500;}
-  .product-link{text-align:center;padding:12px;border-radius:100px;font-size:13.5px;font-weight:600;background:#fff;color:var(--wine);border:1.5px solid var(--border);transition:all .25s;}
-  .product-link:hover{border-color:var(--rose);color:var(--wine-dark);}
+  .product-link{text-align:center;padding:12px;border-radius:100px;font-size:13.5px;font-weight:600;background:var(--surface);color:var(--wine);border:1.5px solid var(--border);transition:all .25s;}
+  .product-link:hover{border-color:var(--rose);color:var(--heading);}
 
   .recipes-section{background:var(--blush-2);}
   .recipes-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;}
   .recipe-visual{background:linear-gradient(160deg, var(--gold), #6B4F1E);border-radius:var(--radius-lg);padding:44px 30px;text-align:center;color:#fff;box-shadow:var(--shadow-soft);}
-  .recipe-book{width:104px;height:144px;margin:0 auto 18px;border-radius:6px 10px 10px 6px;background:#fff;position:relative;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+  .recipe-book{width:104px;height:144px;margin:0 auto 18px;border-radius:6px 10px 10px 6px;background:var(--surface);position:relative;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
   .recipe-book::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:rgba(0,0,0,0.12);border-radius:6px 0 0 6px;}
   .recipe-chip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
-  .recipe-chip{background:#fff;border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
-  .recipe-chip h5{font-size:13.5px;color:var(--wine-dark);margin-bottom:3px;}
+  .recipe-chip{background:var(--surface);border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
+  .recipe-chip h5{font-size:13.5px;color:var(--heading);margin-bottom:3px;}
   .recipe-chip p{font-size:12px;color:var(--muted);line-height:1.4;}
   .recipe-price-row{display:flex;align-items:center;gap:18px;margin-top:26px;flex-wrap:wrap;}
-  .recipe-price{font-family:'Poppins';font-size:24px;font-weight:700;color:var(--wine-dark);}
+  .recipe-price{font-family:'Poppins';font-size:24px;font-weight:700;color:var(--heading);}
   .recipe-price span{font-size:13px;color:var(--muted-2);font-weight:500;}
 
   .combos-section{background:var(--wine);color:#fff;}
@@ -252,7 +255,7 @@
   .combos-section .eyebrow{color:var(--rose-soft)!important;}
   .combos-section .eyebrow::before{background:var(--rose-soft);}
   .combo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-  .combo-card{background:#fff;border-radius:var(--radius-lg);padding:30px 26px;color:var(--ink);display:flex;flex-direction:column;position:relative;transition:all .3s var(--ease);}
+  .combo-card{background:var(--surface);border-radius:var(--radius-lg);padding:30px 26px;color:var(--ink);display:flex;flex-direction:column;position:relative;transition:all .3s var(--ease);}
   .combo-card:hover{transform:translateY(-6px);}
   .combo-card.best{border:2px solid var(--gold);}
   .combo-tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-size:10.5px;font-weight:700;padding:6px 16px;border-radius:100px;letter-spacing:0.05em;text-transform:uppercase;}
@@ -262,7 +265,7 @@
   .combo-items li:first-child{border-top:none;}
   .combo-items li svg{width:15px;height:15px;flex-shrink:0;margin-top:1px;color:var(--sage);}
   .combo-old-price{font-size:13px;color:var(--muted-2);text-decoration:line-through;}
-  .combo-price{font-family:'Poppins';font-size:26px;font-weight:700;color:var(--wine-dark);margin:4px 0 16px;}
+  .combo-price{font-family:'Poppins';font-size:26px;font-weight:700;color:var(--heading);margin:4px 0 16px;}
   .combo-price span{font-size:12.5px;color:var(--muted-2);font-weight:500;}
   .combo-cta{text-align:center;padding:13px;border-radius:100px;font-size:13.5px;font-weight:600;background:var(--wine);color:#fff;display:block;transition:all .25s;}
   .combo-cta:hover{background:var(--wine-dark);}
@@ -315,20 +318,20 @@
       </div>
     </div>
     <div class="hero-copy">
-      <span class="eyebrow">Especialista em diástase e recuperação abdominal</span>
+      <span class="eyebrow">Método passo a passo para diástase e barriga pós-parto</span>
       <div class="credential-row">
         <span class="credential-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Fisioterapeuta</span>
         <span class="credential-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Estudante de Nutrição</span>
         <span class="credential-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>Coach de Emagrecimento</span>
       </div>
-      <h1>Sua barriga tem <span class="scribble">jeito<svg viewBox="0 0 200 40"><path d="M4 30 Q60 4 100 20 Q140 34 196 12" stroke="#C98A2E" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span> — com respiração, postura e consistência.</h1>
-      <p class="sub">Um método passo a passo de respiração diafragmática, ativação do transverso e posturas para apoiar a recuperação da diástase e o afinamento da cintura. Sem cirurgia, sem academia. 10 minutos por dia, no seu quarto. Não substitui avaliação médica.</p>
+      <h1>Chega de esconder a barriga. <span class="scribble">Comece<svg viewBox="0 0 200 40"><path d="M4 30 Q60 4 100 20 Q140 34 196 12" stroke="#E3A94A" stroke-width="3.5" fill="none" stroke-linecap="round"/></svg></span> hoje o método que já mudou a rotina de centenas de mulheres.</h1>
+      <p class="sub">Um passo a passo guiado de respiração diafragmática e ativação do transverso pra você sentir a diferença na barriga e na postura em poucos minutos por dia — sem academia, sem equipamento, no conforto da sua casa. Conteúdo educacional; não substitui avaliação médica.</p>
       <div class="hero-ctas">
         <a href="#planos" class="btn-primary">
-          Começar meu tratamento
+          Quero começar agora
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#bebida" class="btn-secondary">Conhecer a bebida funcional</a>
+        <a href="#bebida" class="btn-secondary">Ver a bebida funcional</a>
       </div>
     </div>
   </div>
@@ -338,8 +341,8 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Diagnóstico rápido</span>
-      <h2>Qual desses momentos é o seu agora?</h2>
-      <p>Escolha a opção que mais combina com você. Vou te mostrar por onde normalmente começamos.</p>
+      <h2>Qual dessas é a sua barriga agora?</h2>
+      <p>Toque na opção que mais parece com você e veja exatamente por onde você deveria começar.</p>
     </div>
     <div class="diag-grid reveal">
       <div class="diag-card" data-profile="0">
@@ -385,31 +388,31 @@
 <section class="products-section" id="produtos">
   <div class="container">
     <div class="section-head center reveal">
-      <span class="eyebrow">O que você encontra aqui</span>
-      <h2>Três formas de cuidar da sua barriga</h2>
-      <p>Aulas, bebida funcional e receitas — separados ou juntos em combo, do jeito que fizer mais sentido pra você.</p>
+      <span class="eyebrow">O que você leva com você</span>
+      <h2>Tudo que você precisa pra transformar sua barriga</h2>
+      <p>Aulas guiadas, bebida funcional e receitas fáceis — separados ou em combo, no seu ritmo.</p>
     </div>
     <div class="products-grid reveal">
       <div class="product-card">
         <div class="product-icon" style="background:var(--rose-soft);">🎥</div>
         <h3>Aulas Online</h3>
-        <p>Método completo de respiração, ativação do vácuo abdominal e postura, em módulos progressivos de 10 minutos por dia.</p>
+        <p>O passo a passo completo de respiração, ativação do vácuo abdominal e postura, em módulos guiados de poucos minutos por dia.</p>
         <div class="product-price-tag">A partir de R$47<span>/mês</span></div>
-        <a href="#planos" class="product-link">Ver planos de aula</a>
+        <a href="#planos" class="product-link">Quero ver os planos</a>
       </div>
       <div class="product-card">
         <div class="product-icon" style="background:var(--sage-soft);">🍵</div>
         <h3>Bebida Funcional</h3>
-        <p>Protocolo Reset com chás e ervas, para complementar sua rotina — sabor leve, pensado para o dia a dia.</p>
+        <p>Protocolo Reset com chás e ervas selecionadas, pra dar aquele empurrão na sua rotina — sabor leve, feito pro dia a dia.</p>
         <div class="product-price-tag">R$57<span>/ kit com 10un</span></div>
         <a href="#bebida" class="product-link">Conhecer a bebida</a>
       </div>
       <div class="product-card">
-        <div class="product-icon" style="background:#F1E4C4;">📖</div>
+        <div class="product-icon" style="background:rgba(214,167,86,0.18);">📖</div>
         <h3>Receitas Fit</h3>
-        <p>E-book com receitas práticas e equilibradas, fáceis de preparar, pensadas pra acompanhar seu método.</p>
+        <p>Um e-book direto ao ponto, com receitas práticas pra você comer bem sem complicar — sem dieta maluca.</p>
         <div class="product-price-tag">R$37<span>/ e-book</span></div>
-        <a href="#receitas" class="product-link">Ver receitas</a>
+        <a href="#receitas" class="product-link">Quero as receitas</a>
       </div>
     </div>
   </div>
@@ -419,8 +422,8 @@
   <div class="container">
     <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
       <span class="eyebrow">Como funciona</span>
-      <h2>Uma progressão em 6 passos, no seu ritmo</h2>
-      <p>Aulas curtas, liberadas conforme você avança — sem pular etapas importantes.</p>
+      <h2>6 passos simples até você ver a diferença</h2>
+      <p>Aulas curtas, liberadas conforme você avança — direto ao ponto, sem enrolação.</p>
     </div>
     <div class="timeline reveal">
       <div class="tl-step"><div class="tl-dot">01</div><h4>Avaliação</h4><p>Diagnóstico da sua diástase.</p></div>
@@ -443,8 +446,8 @@
       </div>
       <div class="reveal">
         <span class="eyebrow">Complemento do método</span>
-        <h2 style="font-size:clamp(24px,2.8vw,32px);color:var(--wine-dark);margin-bottom:14px;">Uma bebida funcional para apoiar sua rotina, não para substituir o método</h2>
-        <p style="font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:520px;">Criada para acompanhar as aulas de respiração e postura, com ingredientes tradicionalmente associados a digestão leve, disposição e bem-estar. É um apoio à sua rotina — os resultados de barriga e postura vêm do método de respiração e ativação, praticado com consistência.</p>
+        <h2 style="font-size:clamp(24px,2.8vw,32px);color:var(--heading);margin-bottom:14px;">O empurrão extra pra sua rotina — não um atalho mágico</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:520px;">Pensada pra acompanhar suas aulas de respiração e postura, com ingredientes tradicionalmente associados a digestão leve, disposição e bem-estar. Ela apoia sua rotina — mas quem faz a barriga mudar de verdade é o método, praticado com consistência.</p>
         <div class="ingredient-grid">
           <div class="ingredient-chip"><h5>Chá verde</h5><p>Associado ao metabolismo energético</p></div>
           <div class="ingredient-chip"><h5>Chá preto</h5><p>Tradicionalmente ligado à digestão</p></div>
@@ -465,8 +468,8 @@
     <div class="recipes-grid">
       <div class="reveal">
         <span class="eyebrow">Complemento do método</span>
-        <h2 style="font-size:clamp(24px,2.8vw,32px);color:var(--wine-dark);margin-bottom:14px;">Receitas fáceis para apoiar sua rotina, sem dietas restritivas</h2>
-        <p style="font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:520px;">Um e-book com receitas simples e equilibradas para o dia a dia — pensado para acompanhar as aulas e a bebida funcional, sem substituir uma alimentação orientada por nutricionista.</p>
+        <h2 style="font-size:clamp(24px,2.8vw,32px);color:var(--heading);margin-bottom:14px;">Comer bem sem virar sua vida de cabeça pra baixo</h2>
+        <p style="font-size:15px;color:var(--muted);line-height:1.65;margin-bottom:22px;max-width:520px;">Um e-book direto ao ponto, com receitas simples pro dia a dia — pra você comer bem sem dieta maluca, sem restrição extrema e sem perder tempo na cozinha.</p>
         <div class="recipe-chip-grid">
           <div class="recipe-chip"><h5>Cafés da manhã leves</h5><p>Opções rápidas para começar o dia</p></div>
           <div class="recipe-chip"><h5>Almoços práticos</h5><p>Receitas simples do dia a dia</p></div>
@@ -490,8 +493,8 @@
 <section>
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow">Benefícios</span>
-      <h2>O que você constrói ao longo do método</h2>
+      <span class="eyebrow">O que você ganha</span>
+      <h2>Não é só sobre a barriga</h2>
     </div>
     <div class="benefits-grid reveal">
       <div class="benefit-card"><div class="benefit-icon">🫁</div><h4>Consciência do core</h4><p>Sinta e ative a musculatura profunda.</p></div>
@@ -510,7 +513,7 @@
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow">Histórias reais</span>
-      <h2>Quem já vive o método</h2>
+      <h2>Não é só papo — é quem já fez</h2>
     </div>
     <div class="testi-track-wrap reveal">
       <div class="testi-track" id="testiTrack">
@@ -545,8 +548,8 @@
   <div class="container">
     <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
       <span class="eyebrow">Combos avulsos</span>
-      <h2>Junte tudo e economize</h2>
-      <p>Pacotes de compra única, sem mensalidade — combinando aulas, bebida funcional e receitas. Oferta válida enquanto durarem as vagas desta turma.</p>
+      <h2>Junte tudo e pague menos</h2>
+      <p>Compra única, sem mensalidade — aulas, bebida funcional e receitas no mesmo pacote. Vagas desta turma são limitadas.</p>
     </div>
     <div class="combo-grid reveal">
       <div class="combo-card">
@@ -597,8 +600,8 @@
   <div class="container">
     <div class="section-head center reveal">
       <span class="eyebrow">Planos</span>
-      <h2>Escolha como quer começar</h2>
-      <p>Todos os planos incluem acesso à plataforma, suporte e atualizações de conteúdo. Turma com vagas limitadas para garantir acompanhamento próximo.</p>
+      <h2>Escolha seu plano e comece agora</h2>
+      <p>Acesso completo à plataforma, suporte e atualizações. Turma com vagas limitadas pra manter o acompanhamento de perto.</p>
     </div>
     <div class="pricing-grid reveal">
       <div class="price-card">
@@ -658,7 +661,7 @@
   </div>
 </section>
 
-<section id="faq" style="background:#fff;">
+<section id="faq" style="background:var(--surface);">
   <div class="container" style="max-width:800px;">
     <div class="section-head reveal">
       <span class="eyebrow">Perguntas frequentes</span>
@@ -688,9 +691,9 @@
 <section>
   <div class="container">
     <div class="final-cta reveal">
-      <h2>Sua respiração é o primeiro passo para reconectar com sua barriga.</h2>
-      <p>Comece hoje com o Módulo 1 e sinta a diferença nas primeiras aulas.</p>
-      <a href="#planos" class="btn-primary">Escolher meu plano</a>
+      <h2>Sua barriga não vai mudar sozinha. Dê o primeiro passo hoje.</h2>
+      <p>Comece agora com o Módulo 1 e sinta a diferença já nas primeiras aulas.</p>
+      <a href="#planos" class="btn-primary">Quero começar agora</a>
     </div>
   </div>
 </section>
