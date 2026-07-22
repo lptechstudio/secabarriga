@@ -78,9 +78,6 @@
   .btn-primary:hover{transform:translateY(-2px);background:var(--wine-dark);}
   .btn-secondary{background:#fff;color:var(--wine);padding:16px 28px;border-radius:100px;font-size:15px;font-weight:600;border:1.5px solid var(--border);transition:all .25s;}
   .btn-secondary:hover{border-color:var(--rose);}
-  .hero-stats{display:flex;gap:34px;margin-top:46px;flex-wrap:wrap;}
-  .stat-num{font-family:'Poppins';font-size:26px;font-weight:700;color:var(--wine-dark);}
-  .stat-label{font-size:12.5px;color:var(--muted);margin-top:2px;}
 
   section{padding:110px 0;}
   .section-head{max-width:620px;margin-bottom:56px;}
@@ -312,11 +309,6 @@
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
         <a href="#bebida" class="btn-secondary">Conhecer a bebida funcional</a>
-      </div>
-      <div class="hero-stats">
-        <div><div class="stat-num" data-count="12400">0</div><div class="stat-label">Pessoas acompanhadas</div></div>
-        <div><div class="stat-num" data-count="15">0</div><div class="stat-label">Países atendidos</div></div>
-        <div><div class="stat-num" data-count="4.9">0</div><div class="stat-label">Avaliação média</div></div>
       </div>
     </div>
   </div>
@@ -728,25 +720,6 @@
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
   }, {threshold:0.15});
   revealEls.forEach(el => io.observe(el));
-
-  const statEls = document.querySelectorAll('.stat-num');
-  const statIO = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){
-        const el = e.target;
-        const target = parseFloat(el.dataset.count);
-        const isDecimal = target % 1 !== 0;
-        let cur = 0; const step = target / 40;
-        const t = setInterval(()=>{
-          cur += step;
-          if(cur >= target){ cur = target; clearInterval(t); }
-          el.textContent = isDecimal ? cur.toFixed(1) : Math.round(cur).toLocaleString('pt-BR');
-        }, 30);
-        statIO.unobserve(el);
-      }
-    });
-  }, {threshold:0.5});
-  statEls.forEach(el => statIO.observe(el));
 
   const profiles = [
     {title:"Foco: Respiração e reconexão pós-parto", text:"Nesse perfil, começamos pelo Módulo de Respiração Diafragmática, com ativação leve do core antes de qualquer exercício de carga.", img:""},
