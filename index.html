@@ -267,6 +267,7 @@
   .recipes-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:50px;align-items:center;}
   .recipe-visual{background:linear-gradient(160deg, var(--gold), #6B4F1E);border-radius:var(--radius-lg);padding:44px 30px;text-align:center;color:#fff;box-shadow:var(--shadow-soft);}
   .recipe-book{width:104px;height:144px;margin:0 auto 18px;border-radius:6px 10px 10px 6px;background:var(--surface);position:relative;box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+  .recipe-book-cover{width:170px;height:236px;margin:0 auto 18px;border-radius:6px 10px 10px 6px;object-fit:cover;box-shadow:0 14px 32px rgba(0,0,0,0.35);}
   .recipe-book::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:rgba(0,0,0,0.12);border-radius:6px 0 0 6px;}
   .recipe-chip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px;}
   .recipe-chip{background:var(--surface);border-radius:var(--radius-sm);padding:14px 16px;border:1.5px solid var(--border);}
@@ -557,7 +558,7 @@
         <div class="drink-note">Conteúdo educativo de alimentação. Não substitui acompanhamento de nutricionista, especialmente em casos de restrições alimentares ou condições de saúde específicas.</div>
       </div>
       <div class="recipe-visual reveal">
-        <div class="recipe-book"></div>
+        <img class="recipe-book-cover" src="assets/ebook-cover.png" alt="Capa do e-book de receitas">
         <h4 style="font-size:15px;font-weight:700;margin-bottom:4px;">E-book Receitas Fit</h4>
         <span style="font-size:12px;opacity:0.8;">+30 receitas práticas</span>
       </div>
