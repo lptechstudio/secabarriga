@@ -137,19 +137,6 @@
   .diag-card-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-bottom:16px;display:block;}
   .diag-card h4{font-size:16.5px;color:var(--heading);margin-bottom:8px;}
   .diag-card p{font-size:13.5px;color:var(--muted);line-height:1.5;}
-  .diag-detail{margin-top:26px;background:var(--blush);border-radius:var(--radius-lg);border:1.5px solid var(--border);max-height:0;overflow:hidden;opacity:0;transition:max-height .5s var(--ease), opacity .4s var(--ease), padding .5s var(--ease);}
-  .diag-detail.open{max-height:600px;opacity:1;padding:36px;}
-  .diag-detail-inner{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;transition:opacity .18s var(--ease);}
-  .diag-detail-inner.fading{opacity:0;}
-  .diag-detail h3{font-size:21px;color:var(--heading);margin-bottom:12px;}
-  .diag-detail p{font-size:14.5px;color:var(--muted);line-height:1.65;}
-  .diag-photo-frame{position:relative;border-radius:var(--radius-md);overflow:hidden;aspect-ratio:1/1;background:var(--surface);box-shadow:var(--shadow-card);}
-  .diag-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s var(--ease);}
-  .diag-photo.show{opacity:1;}
-  .diag-photo-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--wine);opacity:0.5;text-align:center;padding:20px;transition:opacity .3s;}
-  .diag-photo-placeholder svg{width:46px;height:46px;}
-  .diag-photo-placeholder p{font-size:12px;font-weight:600;line-height:1.5;}
-  .diag-continue{margin-top:20px;background:var(--wine);color:#fff;padding:13px 26px;border-radius:100px;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:8px;}
 
   .method{background:var(--wine);color:#fff;}
   .method .section-head h2{color:#fff;}
@@ -296,7 +283,6 @@
     .hero-grid{grid-template-columns:1fr;}
     .persona-frame{max-width:320px;margin:0 auto;}
     .diag-grid{grid-template-columns:1fr;}
-    .diag-detail-inner{grid-template-columns:1fr;}
     .timeline{grid-template-columns:repeat(3,1fr);row-gap:28px;}
     .timeline::before{display:none;}
     .drink-grid{grid-template-columns:1fr;}
@@ -399,24 +385,6 @@
         <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4A47" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
         <h4>Já treino, quero refinar</h4>
         <p>Já malho, mas quero entender a técnica de ativação e acelerar resultados.</p>
-      </div>
-    </div>
-    <div class="diag-detail" id="diagDetail">
-      <div class="diag-detail-inner" id="diagInner">
-        <div>
-          <h3 id="diagTitle"></h3>
-          <p id="diagText"></p>
-          <a href="#planos" class="diag-continue">Ver plano recomendado
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-          </a>
-        </div>
-        <div class="diag-photo-frame">
-          <img class="diag-photo" id="diagPhoto" src="" alt="">
-          <div class="diag-photo-placeholder" id="diagPlaceholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-            <p>Foto real do perfil<br>(inserir aqui)</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -798,41 +766,11 @@
   }, {threshold:0.15});
   revealEls.forEach(el => io.observe(el));
 
-  const profiles = [
-    {title:"Foco: Respiração e reconexão pós-parto", text:"Nesse perfil, começamos pelo Módulo de Respiração Diafragmática, com ativação leve do core antes de qualquer exercício de carga.", img:"assets/diag-mae-recente.png"},
-    {title:"Foco: Base respiratória e postura", text:"Aqui o ponto de partida é reeducar o padrão respiratório, aliviando tensão lombar antes de avançar para o vácuo abdominal.", img:"assets/diag-barriga-estufada.png"},
-    {title:"Foco: Refinamento técnico", text:"Você já tem base — o método foca em aprimorar a técnica de vácuo, tempo de contração e integração com seu treino atual.", img:"assets/diag-ja-treino.png"}
-  ];
   const diagCards = document.querySelectorAll('.diag-card');
-  const diagDetail = document.getElementById('diagDetail');
-  const diagInner = document.getElementById('diagInner');
-  const diagTitle = document.getElementById('diagTitle');
-  const diagText = document.getElementById('diagText');
-  const diagPhoto = document.getElementById('diagPhoto');
-  const diagPlaceholder = document.getElementById('diagPlaceholder');
   diagCards.forEach(card=>{
     card.addEventListener('click', ()=>{
-      const alreadyActive = card.classList.contains('active');
       diagCards.forEach(c=>c.classList.remove('active'));
       card.classList.add('active');
-      const p = profiles[card.dataset.profile];
-      diagDetail.classList.add('open');
-      const update = ()=>{
-        diagTitle.textContent = p.title;
-        diagText.textContent = p.text;
-        if(p.img){
-          diagPhoto.src = p.img;
-          diagPhoto.classList.add('show');
-          diagPlaceholder.style.opacity = '0';
-        } else {
-          diagPhoto.classList.remove('show');
-          diagPlaceholder.style.opacity = '0.5';
-        }
-        diagInner.classList.remove('fading');
-      };
-      if(alreadyActive){ update(); return; }
-      diagInner.classList.add('fading');
-      setTimeout(update, 180);
     });
   });
 
