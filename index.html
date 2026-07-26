@@ -87,6 +87,15 @@
   .video-caption strong{color:var(--heading);font-weight:700;}
 
   .buy-section{padding:8px 0 64px;}
+  .before-after-section{padding:8px 0 76px;}
+  .ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:6px;}
+  .ba-slot{aspect-ratio:4/5;border-radius:var(--radius-md);border:1.5px dashed var(--border);background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);text-align:center;padding:20px;}
+  .ba-slot svg{width:38px;height:38px;color:var(--wine);opacity:0.7;}
+  .ba-slot p{font-size:12.5px;font-weight:600;line-height:1.5;color:var(--muted);}
+  .ba-slot span{font-size:11px;color:var(--muted-2);}
+  @media(max-width:720px){
+    .ba-grid{grid-template-columns:1fr;}
+  }
   .transform-headline{margin-top:56px;text-align:center;font-family:'Poppins',sans-serif;font-weight:800;font-size:clamp(22px,3.2vw,34px);line-height:1.25;color:var(--heading);text-transform:uppercase;max-width:920px;margin-left:auto;margin-right:auto;}
   .transform-headline .highlight{color:#FF3B7C;}
   .transform-sub{margin-top:18px;text-align:center;font-size:14px;font-weight:700;letter-spacing:0.02em;text-transform:uppercase;color:var(--muted);}
@@ -354,6 +363,28 @@
     </div>
     <h2 class="transform-headline">Veja a transformação que essas mulheres conquistaram com o <span class="highlight">método Barriga Negativa</span></h2>
     <p class="transform-sub">A próxima a sentir a barriga firme, sem inchaço e com a diástase fechada pode ser você</p>
+  </div>
+</section>
+
+<section class="before-after-section">
+  <div class="container">
+    <div class="ba-grid">
+      <div class="ba-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <p>Foto antes e depois<br>(inserir aqui)</p>
+        <span>Aluna 1</span>
+      </div>
+      <div class="ba-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <p>Foto antes e depois<br>(inserir aqui)</p>
+        <span>Aluna 2</span>
+      </div>
+      <div class="ba-slot">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="9.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <p>Foto antes e depois<br>(inserir aqui)</p>
+        <span>Aluna 3</span>
+      </div>
+    </div>
   </div>
 </section>
 
