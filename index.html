@@ -134,7 +134,7 @@
   .diag-card.active .diag-icon svg{stroke:#fff;}
   .diag-check{position:absolute;top:16px;right:16px;width:24px;height:24px;border-radius:50%;background:var(--wine);color:#fff;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.4);transition:all .35s var(--ease);}
   .diag-card.active .diag-check{opacity:1;transform:scale(1);}
-  .diag-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-bottom:16px;display:block;}
+  .diag-card-photo{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:12px;margin-bottom:16px;display:block;}
   .diag-card h4{font-size:16.5px;color:var(--heading);margin-bottom:8px;}
   .diag-card p{font-size:13.5px;color:var(--muted);line-height:1.5;}
   .diag-detail{margin-top:26px;background:var(--blush);border-radius:var(--radius-lg);border:1.5px solid var(--border);max-height:0;overflow:hidden;opacity:0;transition:max-height .5s var(--ease), opacity .4s var(--ease), padding .5s var(--ease);}
@@ -381,21 +381,21 @@
     <div class="diag-grid reveal">
       <div class="diag-card" data-profile="0">
         <div class="diag-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></div>
-        <img class="diag-photo" src="assets/diag-mae-recente.png" alt="Barriga logo depois do parto, abdômen separado">
+        <img class="diag-card-photo" src="assets/diag-mae-recente.png" alt="Barriga logo depois do parto, abdômen separado">
         <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4A47" stroke-width="2"><path d="M12 2a5 5 0 0 1 5 5v3a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"/><path d="M8 14v2a4 4 0 0 0 8 0v-2"/></svg></div>
         <h4>Sou mãe recente</h4>
         <p>Minha barriga não voltou depois do parto, sinto o abdômen separado ou abaulado.</p>
       </div>
       <div class="diag-card" data-profile="1">
         <div class="diag-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></div>
-        <img class="diag-photo" src="assets/diag-barriga-estufada.png" alt="Antes e depois: barriga estufada e postura melhorando">
+        <img class="diag-card-photo" src="assets/diag-barriga-estufada.png" alt="Antes e depois: barriga estufada e postura melhorando">
         <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4A47" stroke-width="2"><path d="M4 12h16M4 6h16M4 18h16"/></svg></div>
         <h4>Barriga estufada e postura ruim</h4>
         <p>Sinto inchaço, dor lombar e nunca aprendi a respirar direito.</p>
       </div>
       <div class="diag-card" data-profile="2">
         <div class="diag-check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5"><path d="M5 13l4 4L19 7"/></svg></div>
-        <img class="diag-photo" src="assets/diag-ja-treino.png" alt="Barriga de quem já treina e quer refinar a técnica">
+        <img class="diag-card-photo" src="assets/diag-ja-treino.png" alt="Barriga de quem já treina e quer refinar a técnica">
         <div class="diag-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E4A47" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
         <h4>Já treino, quero refinar</h4>
         <p>Já malho, mas quero entender a técnica de ativação e acelerar resultados.</p>
@@ -799,9 +799,9 @@
   revealEls.forEach(el => io.observe(el));
 
   const profiles = [
-    {title:"Foco: Respiração e reconexão pós-parto", text:"Nesse perfil, começamos pelo Módulo de Respiração Diafragmática, com ativação leve do core antes de qualquer exercício de carga.", img:""},
-    {title:"Foco: Base respiratória e postura", text:"Aqui o ponto de partida é reeducar o padrão respiratório, aliviando tensão lombar antes de avançar para o vácuo abdominal.", img:""},
-    {title:"Foco: Refinamento técnico", text:"Você já tem base — o método foca em aprimorar a técnica de vácuo, tempo de contração e integração com seu treino atual.", img:""}
+    {title:"Foco: Respiração e reconexão pós-parto", text:"Nesse perfil, começamos pelo Módulo de Respiração Diafragmática, com ativação leve do core antes de qualquer exercício de carga.", img:"assets/diag-mae-recente.png"},
+    {title:"Foco: Base respiratória e postura", text:"Aqui o ponto de partida é reeducar o padrão respiratório, aliviando tensão lombar antes de avançar para o vácuo abdominal.", img:"assets/diag-barriga-estufada.png"},
+    {title:"Foco: Refinamento técnico", text:"Você já tem base — o método foca em aprimorar a técnica de vácuo, tempo de contração e integração com seu treino atual.", img:"assets/diag-ja-treino.png"}
   ];
   const diagCards = document.querySelectorAll('.diag-card');
   const diagDetail = document.getElementById('diagDetail');
